@@ -141,6 +141,7 @@ set(keepassx_SOURCES
         gui/masterkey/KeyComponentWidget.cpp
         gui/masterkey/PasswordEditWidget.cpp
         gui/masterkey/YubiKeyEditWidget.cpp
+        gui/masterkey/OpenPGPEditWidget.cpp
         gui/masterkey/KeyFileEditWidget.cpp
         gui/dbsettings/DatabaseSettingsWidget.cpp
         gui/dbsettings/DatabaseSettingsDialog.cpp
@@ -163,6 +164,7 @@ set(keepassx_SOURCES
         keys/PasswordKey.cpp
         keys/YkChallengeResponseKey.cpp
         keys/YkChallengeResponseKeyCLI.cpp
+        keys/OpenPGP.cpp
         streams/HashedBlockStream.cpp
         streams/HmacBlockStream.cpp
         streams/LayeredStream.cpp
@@ -211,6 +213,7 @@ endif()
 if(APPLE)
     add_feature_info(TouchID WITH_XC_TOUCHID "TouchID integration")
 endif()
+add_feature_info(OpenPGP WITH_XC_OPENPGP "OpenPGP support, including Smart Cards")
 
 set(BROWSER_SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/browser)
 add_subdirectory(browser)
@@ -274,6 +277,10 @@ if(WITH_XC_NETWORKING)
             gui/UpdateCheckDialog.cpp
             gui/IconDownloaderDialog.cpp
             updatecheck/UpdateChecker.cpp)
+endif()
+
+if(WITH_XC_OPENPGP)
+    list(APPEND keepassx_SOURCES keys/drivers/GnuPGKey.cpp)
 endif()
 
 if(WITH_XC_TOUCHID)
