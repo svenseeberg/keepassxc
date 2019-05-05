@@ -258,6 +258,7 @@ endif()
 
 if(WITH_XC_OPENPGP)
     list(APPEND keepassx_SOURCES keys/drivers/GnuPGKey.cpp)
+    link_libraries(gpgme assuan gpg-error)
 endif()
 
 if(WITH_XC_TOUCHID)

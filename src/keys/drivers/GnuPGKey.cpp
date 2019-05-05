@@ -24,10 +24,11 @@
 void GnuPGKey::listPublicKeys() {
     gpgme_ctx_t ctx;
     gpgme_key_t key;
+    gpgme_check_version (NULL);
     gpgme_error_t err = gpgme_new (&ctx);
 
     if (!err) {
-        err = gpgme_op_keylist_start (ctx, "g10code", 0);
+        err = gpgme_op_keylist_start (ctx, NULL, 1);
         while (!err) {
             err = gpgme_op_keylist_next (ctx, &key);
             if (err)
@@ -44,7 +45,6 @@ void GnuPGKey::listPublicKeys() {
     }
     if (gpg_err_code (err) != GPG_ERR_EOF) {
         fprintf (stderr, "can not list keys: %s\n", gpgme_strerror (err));
-        exit (1);
     }
 }
 
