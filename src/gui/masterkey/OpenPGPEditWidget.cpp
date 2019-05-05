@@ -35,7 +35,7 @@ OpenPGPEditWidget::OpenPGPEditWidget(QWidget* parent)
         tr("<p>Use an PGP implementation like GnuPG for assymetric database encrytion."
         "With GnuPG, OpenPGP Smart Cards (i.e. Nitrokey Pro) are also supported.</p>"));
     GnuPGKey myGnuPGKey;
-    myGnuPGKey.listPublicKeys();
+    myGnuPGKey.listKeys();
 }
 
 OpenPGPEditWidget::~OpenPGPEditWidget()

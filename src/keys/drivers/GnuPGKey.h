@@ -23,7 +23,7 @@
 
 class GnuPGKey {
     public:
-    void listPublicKeys();
+    void listKeys();
     void encrypt();
     void decrypt();
     void selectKey();
