@@ -47,3 +47,10 @@ void OpenPGPKey::selectKey() {
 void OpenPGPKey::deleteKey2() {
 
 }
+
+/*
+ * List available PGP keys (secret key available).
+ */
+void OpenPGPKey::listKeys() {
+
+}

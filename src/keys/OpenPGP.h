@@ -22,6 +22,7 @@
 #include <QString>
 
 #include "keys/Key.h"
+#include "keys/drivers/GnuPGKey.h"
 
 class OpenPGPKey : public Key
 {
@@ -37,6 +38,7 @@ public:
     void deleteKey2();
     void decrypt();
     void selectKey();
+    void listKeys();
 
 private:
     QByteArray m_key;
