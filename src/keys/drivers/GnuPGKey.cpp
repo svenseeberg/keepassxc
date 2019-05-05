@@ -21,7 +21,7 @@
  * Generate a list of available keys. The list includes information if+
  * secret key is available or if the secret key is on a smart card.
  */
-void GnuPGKey::listPublicKeys() {
+void GnuPGKey::listKeys() {
     gpgme_ctx_t ctx;
     gpgme_key_t key;
     gpgme_check_version (NULL);
