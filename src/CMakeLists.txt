@@ -257,7 +257,7 @@ if(WITH_XC_NETWORKING)
 endif()
 
 if(WITH_XC_OPENPGP)
-    list(APPEND keepassx_SOURCES keys/drivers/GnuPGKey.cpp)
+    list(APPEND keepassx_SOURCES keys/OpenPGP.cpp keys/drivers/GnuPGKey.cpp)
     link_libraries(gpgme assuan gpg-error)
 endif()
 
