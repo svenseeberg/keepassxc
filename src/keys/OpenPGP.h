@@ -19,6 +19,7 @@
 #define KEEPASSX_SMARTCARD_H
 
 #include <QSharedPointer>
+#include <QComboBox>
 #include <QString>
 
 #include "keys/Key.h"
@@ -29,7 +30,8 @@ class OpenPGPKey : public Key
 public:
     static QUuid UUID;
 
-    explicit OpenPGPKey(const QString& password);
+    //explicit OpenPGPKey(const QString& password);
+    explicit OpenPGPKey();
     QByteArray rawKey() const override;
     void setPassword(const QString& password);
 
@@ -38,7 +40,7 @@ public:
     void deleteKey2();
     void decrypt();
     void selectKey();
-    void listKeys();
+    void listKeys(QComboBox *comboPGPKey);
 
 private:
     QByteArray m_key;

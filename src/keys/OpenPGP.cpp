@@ -51,6 +51,14 @@ void OpenPGPKey::deleteKey2() {
 /*
  * List available PGP keys (secret key available).
  */
-void OpenPGPKey::listKeys() {
-
+void OpenPGPKey::listKeys(QComboBox *comboPGPKey) {
+    GnuPGKey myGnuPGKey;
+    myGnuPGKey.listKeys();
+    //QStringList list;
+    //list << "Bill Murray" << "John Doe" << "Bill Clinton";
+    const QString s = QString("hallo");
+    //QIcon icon = QIcon::fromTheme("edit-undo");
+    //const QVariant userData = QVariant();
+    comboPGPKey->addItem(s);
+    //comboPGPKey->insertItem(0, s, userData);
 }

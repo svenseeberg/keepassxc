@@ -23,6 +23,7 @@
 #include "gui/MessageBox.h"
 #include "keys/CompositeKey.h"
 #include "keys/OpenPGP.h"
+#include "keys/drivers/GnuPGKey.h"
 
 #include <QtConcurrent>
 
@@ -45,7 +46,7 @@ OpenPGPEditWidget::~OpenPGPEditWidget()
 bool OpenPGPEditWidget::addToCompositeKey(QSharedPointer<CompositeKey> key)
 {
     key = key; // TODO (Just remove compile messages for now)
-    QSharedPointer<OpenPGPKey> keyPtr;
+    //QSharedPointer<OpenPGPKey> keyPtr;
     //key->addOpenPGPKey(keyPtr);
     return true;
 }
